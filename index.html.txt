@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Pools | Portland, TN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0288d1;
+            --primary-dark: #01579b;
+            --accent: #00bcd4;
+            --navy: #1a3c5e;
+            --light: #e0f7fa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: 
+                linear-gradient(to bottom, var(--light), #ffffff),
+                radial-gradient(circle at 50% 20%, rgba(2, 136, 209, 0.08) 0%, transparent 70%);
+            color: var(--navy);
+            line-height: 1.7;
+            background-attachment: fixed;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(transparent 50%, rgba(0, 188, 212, 0.03) 50%),
+                linear-gradient(90deg, transparent 50%, rgba(0, 188, 212, 0.03) 50%);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            box-shadow: 0 10px 30px rgba(1, 87, 155, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.8rem;
+            margin: 0;
+            text-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            margin-top: 0.5rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        nav {
+            background: rgba(255,255,255,0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--navy);
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 0.8rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '💧';
+            position: absolute;
+            right: -15px;
+            top: -10px;
+            font-size: 1.6rem;
+            opacity: 0.4;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 5px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(1, 87, 155, 0.18);
+        }
+
+        .service-icon {
+            font-size: 3.2rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            display: block;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #40c4ff, #0288d1);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 15px 35px rgba(2, 136, 209, 0.3);
+            position: relative;
+        }
+
+        .contact h2 {
+            color: #ffffff;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+            margin-bottom: 1.2rem;
+        }
+
+        .phone {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            letter-spacing: 3px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #1877f2, #0d6efd);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.3);
+        }
+
+        .facebook h2 {
+            color: #ffffff;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+            margin-bottom: 1.2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        footer {
+            background: linear-gradient(to bottom, var(--navy), #0f253d);
+            color: #a8d4ff;
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 0.7rem 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>All About Pools</h1>
+        <p>Portland, Tennessee</p>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#about" class="nav-link">About Us</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>Professional Pool Services in Portland, TN</h2>
+            <p style="font-size: 1.25rem;">All About Pools is your trusted local pool service provider in Portland, Tennessee. We offer reliable pool cleaning, repairs, maintenance, openings, and closings throughout Sumner County and surrounding areas.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <i class="fas fa-broom service-icon"></i>
+                    <h3>Pool Cleaning</h3>
+                    <p>Thorough pool cleaning services to keep your water crystal clear and healthy year-round.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools service-icon"></i>
+                    <h3>Repairs</h3>
+                    <p>Expert repairs for pumps, filters, heaters, and other pool equipment issues.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <h3>Maintenance</h3>
+                    <p>Regular maintenance including water chemistry balance, equipment checks, and more.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calendar-alt service-icon"></i>
+                    <h3>Openings &amp; Closings</h3>
+                    <p>Professional seasonal pool opening and winter closing services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get In Touch Today</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 1rem;">Call for a free estimate</p>
+            <p class="phone">(615) 572-4553</p>
+            <a href="tel:6155724553" class="btn">Call Now</a>
+            <p style="margin-top: 2rem;">Serving Portland, TN and all of Sumner County</p>
+        </section>
+
+        <section class="facebook">
+            <h2>Follow Us on Facebook</h2>
+            <p><strong><a href="https://www.facebook.com/p/All-About-Pools-100082829542877/" target="_blank" style="color: white;">All About Pools - Portland, TN</a></strong></p>
+            <p>Like our page for pool tips, seasonal reminders, <strong>before &amp; after photos</strong>, and local updates.</p>
+            <p><strong>Over 160 satisfied customers</strong> follow us there.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <div class="about-grid">
+                <div>
+                    <p><strong>All About Pools</strong> is proudly owned and operated by <strong>Brenda James</strong>, a longtime Portland, Tennessee resident. Brenda is known throughout the community for her dependable service, attention to detail, and friendly approach.</p>
+                    <ul>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Locally owned &amp; operated by Brenda James</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Monthly cleaning &amp; maintenance plans</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Free estimates</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> We clean some spas (but do not service them)</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Email: bljames@gmail.com</li>
+                    </ul>
+                </div>
+                <div style="text-align: center; opacity: 0.9;">
+                    <i class="fas fa-swimming-pool" style="font-size: 12rem; color: var(--accent); filter: drop-shadow(0 10px 20px rgba(0,188,212,0.3));"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p style="font-size: 1.4rem; margin-bottom: 1rem;">&copy; All About Pools • Portland, TN</p>
+        <p>(615) 572-4553 • bljames@gmail.com</p>
+        <div class="footer-links">
+            <a href="#services" style="color: #a8d4ff; text-decoration: none;">Services</a>
+            <a href="#contact" style="color: #a8d4ff; text-decoration: none;">Contact</a>
+            <a href="#about" style="color: #a8d4ff; text-decoration: none;">About Us</a>
+            <a href="https://www.facebook.com/p/All-About-Pools-100082829542877/" target="_blank" style="color: #a8d4ff; text-decoration: none;">Facebook</a>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 2rem;">Simple informational website based on publicly available business information.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
